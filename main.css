@@ -365,3 +365,14 @@ footer {
     .nav-content { flex-direction: column; gap: 10px; }
     nav a { margin: 0 8px; font-size: 0.85rem; }
 }
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+}
+.navbar nav a { margin: 0; }
+.navbar .nav-btn {
+    display: inline-block;
+    white-space: nowrap;
+}
