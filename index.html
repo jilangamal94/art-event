@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عدسة الضوء | معرض التصوير الفوتوغرافي المعاصر</title>
+    <!-- خط القاهرة من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <!-- 1. الشريط العلوي (Navbar) -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo">عدسة <span>الضوء</span></h1>
+            <nav>
+                <a href="#details">تفاصيل المعرض</a>
+                <a href="#gallery">لمحة من الأعمال</a>
+                <a href="#register" class="nav-btn">احجز تذكرتك</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. الواجهة الرئيسية والعداد التنازلي (Hero & Countdown) -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">الدورة الخامسة • القاهرة 2026</span>
+            <h2>حين تحكي الصورة ما تعجز عنه الكلمات</h2>
+            <p>انضم إلينا في أكبر تجمع للمصورين الفوتوغرافيين وعشاق الفن البصري لعرض أندر اللقطات التوثيقية والفنية.</p>
+            
+            <!-- مربعات العداد التنازلي (مجهزة للربط بالجافاسكريبت) -->
+            <div class="countdown" id="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>يوم</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>ساعة</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>دقيقة</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>ثانية</small>
+                </div>
+            </div>
+
+            <a href="#register" class="btn-primary">سجل حضورك مجاناً الآن</a>
+        </div>
+    </section>
+
+    <!-- 3. تفاصيل المعرض (Event Details) -->
+    <section id="details" class="details-section">
+        <div class="container">
+            <h3 class="section-title">تفاصيل الفعالية</h3>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h4>📅 الموعد</h4>
+                    <p>الجمعة، 18 ديسمبر 2026</p>
+                    <span>من الساعة 4:00 عصراً حتى 10:00 مساءً</span>
+                </div>
+                <div class="detail-card">
+                    <h4>📍 المكان</h4>
+                    <p>قاعة الفنون المعاصرة - الزمالك</p>
+                    <span>القاهرة، جمهورية مصر العربية</span>
+                </div>
+                <div class="detail-card">
+                    <h4>🎟️تنظيم الدخول</h4>
+                    <p>دخول مجاني بأسبقية الحجز</p>
+                    <span>يتخلله ندوة حوارية مع كبار المصورين</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. لمحة من الأعمال المعروضة (Gallery Preview) -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h3 class="section-title">من أروقة المعرض</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/street.jpg" alt="كاميرا كلاسيكية">
+                    <div class="item-caption">حياة الشارع المصري</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/person.jpg" alt="تصوير بورتريه">
+                    <div class="item-caption">وجوه وحكايات</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/desert.jpg" alt="طبيعة وصمت">
+                    <div class="item-caption">ظلال الصحراء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. استمارة الحجز (Registration Form) -->
+    <section id="register" class="register-section">
+        <div class="container form-container">
+            <h3 class="section-title">احجز مكانك في المعرض</h3>
+            <p class="form-subtitle">املأ البيانات التالية لتصلك تذكرة الدخول الإلكترونية</p>
+
+            <form id="bookingForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">الاسم بالكامل</label>
+                    <input type="text" id="fullName" placeholder="أدخل اسمك الثلاثي">
+                    <small class="error-msg" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" placeholder="example@mail.com">
+                    <small class="error-msg" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف (واتساب)</label>
+                    <input type="tel" id="phone" placeholder="01xxxxxxxxx">
+                    <small class="error-msg" id="phoneError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="ticketType">نوع الحضور</label>
+                    <select id="ticketType">
+                        <option value="visitor">زائر للمعرض </option>
+                        <option value="vip">دعوة كبار الزوار (VIP)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">تأكيد الحجز</button>
+            </form>
+
+            <!-- رسالة النجاح (مخفية افتراضياً وتظهر بالجافاسكريبت) -->
+            <div id="successMessage" class="success-box hidden">
+                <h4>🎉 تم تأكيد حجزك بنجاح!</h4>
+                <p id="welcomeText"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. التذييل (Footer) -->
+    <footer>
+        <p>© 2026 معرض عدسة الضوء للتصوير الفوتوغرافي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
